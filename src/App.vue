@@ -4,7 +4,7 @@
 
 <script>
 // git log  查看commit记录
-// git status 
+// git status
 export default {}
 </script>
 
