@@ -84,6 +84,7 @@ export default {
       // 登录
       try {
         const { data } = await login(this.mobile, this.code)
+        console.log(data)
         // 将token存进vuex
         this.SET_COUNT(data.data)
         // 跳转路由
