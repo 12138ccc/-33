@@ -22,13 +22,14 @@ export default new Vuex.Store({
   plugins: [
     createPersistedState({
       key: 'HEIMA_TOUTIAO',
-      reducer({ tokenObj }) {
-        return { tokenObj }
+      reducer({ tokenObj, myChannels }) {
+        return { tokenObj, myChannels }
       }
     })
   ],
   state: {
-    tokenObj: {}
+    tokenObj: {},
+    myChannels: []
   },
 
   getters: {
@@ -39,6 +40,14 @@ export default new Vuex.Store({
   mutations: {
     SET_COUNT(state, token) {
       state.tokenObj = token
+    },
+
+    /**
+     *
+     * @param {Array} channels 删除或者添加后的最新 channels
+     */
+    SET_MY_CHANNELS(state, channels) {
+      state.myChannels = channels
     }
   }
 })
